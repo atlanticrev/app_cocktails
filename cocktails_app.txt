@@ -1,0 +1,11 @@
+1. Create / use build script
+2. Use web-components
+3. Mobile first
+
+4. Components:
+  a. Login page
+  b. Profile page
+  c. Settings / preferences page
+  d. List of cocktails page
+  e. Cocktail page
+  f. Cocktail mixing page

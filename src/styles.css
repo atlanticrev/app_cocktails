@@ -1,0 +1,178 @@
+:root {
+    --main-bg-color: #0e0e0e;
+    --main-text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+    --bottom-menu-color: #1e1d1b;
+    --bottom-menu-height: 50px;
+
+    --search-input-bg-color: #262629;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: Ubuntu, "Droid Sans", sans-serif;
+    height: 100vh;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body > div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+x-app {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--main-bg-color);
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+x-cocktails-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 220px;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 0;
+    padding: 0 10px 5px;
+}
+
+@media screen and (min-width: 1200px) {
+    x-cocktails-list {
+        grid-template-columns: 260px 260px;
+        grid-auto-rows: 400px;
+        grid-auto-flow: row dense;
+    }
+}
+
+x-cocktails-list-item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+x-cocktails-list-item > img {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+x-cocktails-list-item > h4 {
+    color: white;
+    font-size: 1rem;
+    text-shadow: var(--main-text-shadow);
+    text-align: left;
+    z-index: 1;
+}
+
+x-bottom-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: var(--bottom-menu-height);
+    background-color: var(--bottom-menu-color);
+    border-top: 1px solid gray;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1200px) {
+    x-bottom-menu {
+        display: none;
+    }
+}
+
+x-bottom-menu > button {
+    background-color: transparent;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-shadow: var(--main-text-shadow);
+    text-align: center;
+    padding: 5px 10px;
+}
+
+x-search-input {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    height: 80px;
+    background-color: var(--main-bg-color);
+}
+
+@media screen and (min-width: 1200px) {
+    x-search-input {
+        width: 500px;
+    }
+}
+
+x-search-input > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--search-input-bg-color);
+    padding: 10px 10px;
+}
+
+x-search-input input {
+    color: white;
+    font-size: 1.1rem;
+    text-shadow: var(--main-text-shadow);
+    background-color: transparent;
+    width: 100%;
+    outline: 0;
+    margin-right: 10px;
+}
+
+x-search-input button {
+    background-color: lightgray;
+    color: black;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+x-search-input input::placeholder {
+    color: gray;
+    text-shadow: var(--main-text-shadow);
+}
+
+
