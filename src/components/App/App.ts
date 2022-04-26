@@ -1,34 +1,37 @@
 import CocktailsList from '../CocktailsList';
-import CocktailsListItem from '../CocktailsListItem';
-import BottomMenu from '../BottomMenu';
-import SearchInput from '../SearchInput';
+import Component from '../Component';
+import FavouritesCocktailsList from '../FavouritesCocktailsList';
 
-const LIST_MOCK_ITEM_COUNT = 24;
+// Primary
+// Todo Подключить иконки
+// Todo Разобраться как использовать компоненты в шаблоне через теги и передавать параметры через атрибуты
+// Todo Разобраться как с телефона подключаться к webpack-dev-server (настройки роутера, windows firewall и т.д.)
 
-export default class App extends HTMLElement {
-    private readonly cocktailsList: CocktailsList;
+// Secondary
+// Todo Добавить анимации
 
-    constructor() {
-        super();
+export default class App extends Component {
+    private cocktailsList: CocktailsList;
 
-        // Todo Подключить иконки
-        // Todo Сделать стили через shadow dom
-        // Todo Добавить анимации
-        // Todo Разобраться как с телефона подключаться к webpack dev server
-        // Todo Разобраться как использовать компоненты в шаблоне через теги и передавать параметры через атрибуты
+    constructor(options: any) {
+        super(options);
 
-        this.append(new SearchInput());
+        this.cocktailsList = null;
 
-        this.cocktailsList = new CocktailsList();
-        for (let i = 0; i < LIST_MOCK_ITEM_COUNT; i++) {
-            this.cocktailsList.addElementToList(new CocktailsListItem({
-                imgSrc: 'cocktail_ex.jpg',
-                description: 'Cocktail description'
-            }));
-        }
-        this.append(this.cocktailsList);
+        this.shadowRoot.append(new FavouritesCocktailsList({}));
+    }
 
-        this.append(new BottomMenu());
+    protected getStyles() {
+        return `
+            :host * {
+                box-sizing: border-box;
+            }
+            
+            :host {
+                height: 100%;
+                width: 100%;
+            }
+        `;
     }
 }
 
