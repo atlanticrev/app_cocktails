@@ -9,9 +9,9 @@
     "moduleResolution": "node"
   },
   "include": [
-    "./declaration.d.ts"
+    "./custom.d.ts"
   ],
   "files": [
-    "./declaration.d.ts"
+    "./custom.d.ts"
   ]
 }

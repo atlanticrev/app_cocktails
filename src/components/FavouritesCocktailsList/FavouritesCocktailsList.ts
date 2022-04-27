@@ -4,6 +4,8 @@ import CocktailsListItem from '../CocktailsListItem';
 import BottomMenu from '../BottomMenu';
 import Page from '../Page';
 
+import cocktailExampleImg from '../../assets/images/cocktail-mock.jpg';
+
 const LIST_MOCK_ITEM_COUNT = 24;
 
 export default class FavouritesCocktailsList extends Page {
@@ -17,7 +19,7 @@ export default class FavouritesCocktailsList extends Page {
         this.cocktailsList = new CocktailsList({});
         for (let i = 0; i < LIST_MOCK_ITEM_COUNT; i++) {
             this.cocktailsList.addElementToList(new CocktailsListItem({
-                imgSrc: 'images/cocktail-mock.jpg',
+                imgSrc: cocktailExampleImg,
                 description: 'Cocktail mock description'
             }));
         }

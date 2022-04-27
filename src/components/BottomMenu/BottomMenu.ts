@@ -1,5 +1,11 @@
 import Component from '../Component';
 
+import homeIcon from '../../assets/icons/house.svg';
+import searchIcon from '../../assets/icons/search.svg';
+import createIcon from '../../assets/icons/circle-plus.svg';
+import favouritesIcon from '../../assets/icons/star.svg';
+import profileIcon from '../../assets/icons/user-solid.svg';
+
 export default class BottomMenu extends Component {
     constructor(options: any) {
         super(options);
@@ -8,23 +14,23 @@ export default class BottomMenu extends Component {
     protected getTemplate() {
         return `
             <button class="bottom-menu-item">
-                <img src="icons/house.svg">
+                <img src="${homeIcon}" alt="Home">
                 <span>Home</span>
             </button>
             <button class="bottom-menu-item">
-                <img src="icons/search.svg">
+                <img src="${searchIcon}" alt="Search">
                 <span>Search</span>
             </button>
             <button class="bottom-menu-item">
-                <img src="icons/circle-plus.svg">
+                <img src="${createIcon}" alt="Create">
                 <span>Create</span>
             </button>
             <button class="bottom-menu-item">
-                <img src="icons/star.svg">
+                <img src="${favouritesIcon}" alt="Favourites">
                 <span>Favourites</span>
             </button>
             <button class="bottom-menu-item">
-                <img src="icons/user-solid.svg">
+                <img src="${profileIcon}" alt="Profile">
                 <span>Profile</span>
             </button>
         `;

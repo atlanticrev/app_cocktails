@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 
 module.exports = {
@@ -13,34 +12,19 @@ module.exports = {
         path: path.resolve(__dirname, './dist')
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.ts', '.js'],
     },
     module: {
         rules: [
-            // {
-            //     test: /\.js$/,
-            //     exclude: /node_modules/,
-            //     use: {
-            //     loader: babel-loader
-            //     },
-            // },
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    // {
-                    //     loader: MiniCssExtractPlugin.loader,
-                    //     options: {
-                    //         // hmr: true,
-                    //         // reloadAll: true,
-                    //         publicPath: path.resolve(__dirname, './dist')
-                    //     },
-                    // },
-                    'style-loader', // use it to put styles in <style> tag
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -48,12 +32,6 @@ module.exports = {
                         },
                     },
                     // 'resolve-url-loader',
-                    // {
-                    //     loader: 'sass-loader',
-                    //     options: {
-                    //         implementation: require('node-sass')
-                    //     },
-                    // }
                 ],
             },
             {
@@ -63,7 +41,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -85,8 +63,5 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].bundle.css'
-        }),
     ]
 };
