@@ -21,7 +21,7 @@ export default class CocktailsList extends Component {
                 width: 100%;
                 overflow: auto;
                 z-index: 0;
-                padding: 5px 10px;
+                padding: 0 10px 14px;
             }
             
             @media screen and (min-width: 1200px) {

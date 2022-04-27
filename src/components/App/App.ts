@@ -43,7 +43,7 @@ export default class App extends Component implements IPageContainer {
             this.switchPage(e.detail.route);
         });
 
-        this.switchPage('/favourites');
+        this.switchPage('/home');
     }
 
     protected getTemplate() {

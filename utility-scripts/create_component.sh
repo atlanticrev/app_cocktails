@@ -14,6 +14,14 @@ export default class $COMPONENT_NAME extends Component {
     constructor(options: any) {
         super(options);
     }
+
+    protected getTemplate(): string {
+        return ``;
+    }
+
+    protected getStyles(): string {
+        return ``;
+    }
 }
 
 customElements.define('x-component-name', $COMPONENT_NAME);" > "$COMPONENT_NAME.ts";

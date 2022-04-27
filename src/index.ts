@@ -5,10 +5,20 @@ import CocktailsList from './components/CocktailsList';
 import CocktailsListItem from './components/CocktailsListItem';
 import FavouritesCocktailsList from './components/FavouritesCocktailsList';
 import CocktailPage from './components/CocktailPage';
+import SideMenu from './components/SideMenu';
+
+export {
+    App,
+    SearchInput,
+    BottomMenu,
+    FavouritesCocktailsList,
+    CocktailsList,
+    CocktailsListItem,
+    CocktailPage,
+    SideMenu
+};
 
 import './styles.css';
-
-export { App, SearchInput, BottomMenu, FavouritesCocktailsList, CocktailsList, CocktailsListItem, CocktailPage };
 
 window.addEventListener('load', () => {
     const root = document.querySelector('#root');

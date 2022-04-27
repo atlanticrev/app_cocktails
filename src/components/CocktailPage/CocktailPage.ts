@@ -7,14 +7,14 @@ export default class CocktailPage extends Page {
 
     protected getTemplate() {
         return `
-            <x-bottom-menu></x-bottom-menu>
+            <x-side-menu></x-side-menu>
         `;
     }
 
     protected getStyles() {
         return super.getStyles().concat(`
             :host {
-                background-color: red;
+                background-color: yellow;
             }
         `);
     }
