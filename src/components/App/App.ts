@@ -5,15 +5,16 @@ import FavouritesCocktailsList from '../FavouritesCocktailsList';
 // Primary
 // Todo Разобраться как хранить, подгружать, стилизовать и ссылаться на иконки правильно
 // Todo Разобраться как использовать компоненты в шаблоне через теги и передавать параметры через атрибуты
-// Todo Выложить на Github pages приложение в виде папки dist
 
 // Secondary
 // Todo Добавить анимации
-// Todo Разобраться как с телефона подключаться к webpack-dev-server (настройки роутера, windows firewall и т.д.)
+// Todo Потренироваться со свойством "flex: 0 1 auto;"
 
 // Webpack
+// Todo Почему TS ругается на пути, хотя объявлены модули в custom.d.ts?
 // Todo Откуда webpack-dev-server раздает файлы? откуда раздает ассеты?
 // Todo Разобраться с путями при загрузке картинок и тп.
+// Todo Разобраться как с телефона подключаться к webpack-dev-server (настройки роутера, windows firewall и т.д.)
 
 export default class App extends Component {
     private cocktailsList: CocktailsList;

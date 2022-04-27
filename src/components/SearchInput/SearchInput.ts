@@ -1,5 +1,7 @@
 import Component from '../Component';
 
+import crossIcon from '../../assets/icons/cross.svg';
+
 export default class SearchInput extends Component {
     constructor(options: any) {
         super(options);
@@ -9,13 +11,21 @@ export default class SearchInput extends Component {
         return `
             <div class="search-container">
                 <input type="text" placeholder="Search some cocktail..." />
-                <button>x</button>
+                <button><img src="${crossIcon}" alt="Reset"></button>
             </div>
         `;
     }
 
     protected getStyles() {
         return `
+            :host * {
+                outline: 0;
+                border: 0;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            
             :host {
                 display: flex;
                 flex-flow: row nowrap;
@@ -36,7 +46,7 @@ export default class SearchInput extends Component {
             .search-container {
                 display: flex;
                 flex-flow: row nowrap;
-                justify-content: flex-end;
+                justify-content: space-between;
                 align-items: center;
                 width: 100%;
                 border-radius: 10px;
@@ -44,30 +54,38 @@ export default class SearchInput extends Component {
                 padding: 10px;
             }
             
-            .search-container input {
+            .search-container > input {
+                flex: 1 1 100%;
                 color: white;
                 font-size: 1.1rem;
                 text-shadow: var(--main-text-shadow);
                 background-color: transparent;
-                width: 100%;
-                outline: 0;
-                border: 0;
                 margin-right: 10px;
             }
             
-            .search-container input::placeholder {
+            .search-container > input::placeholder {
                 color: gray;
                 text-shadow: var(--main-text-shadow);
             }
             
-            .search-container button {
+            .search-container > button {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                flex: 1 0 auto;
                 background-color: lightgray;
                 color: black;
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                border: 0;
+                padding: 4px;
                 font-size: 0.8rem;
+            }
+            
+            .search-container > button > img {
+                width: 100%;
+                height: 100%;
             }
         `;
     }

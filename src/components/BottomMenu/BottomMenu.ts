@@ -66,9 +66,10 @@ export default class BottomMenu extends Component {
                 font-size: 0.75rem;
                 text-shadow: var(--main-text-shadow);
                 text-align: center;
+                /* All children has the same width */
                 width: 0;
                 flex: 1 1 0px;
-                padding: 5px 10px;
+                padding: 0;
                 border: 0;
             }
             
