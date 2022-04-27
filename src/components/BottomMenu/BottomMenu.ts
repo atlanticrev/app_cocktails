@@ -57,7 +57,6 @@ export default class BottomMenu extends Component {
                 justify-content: space-evenly;
                 align-items: center;
                 width: 100%;
-                flex: 1 0 auto;
                 padding: 14px 0;
                 background-color: var(--bottom-menu-color);
                 border-top: 1px solid gray;

@@ -1,5 +1,7 @@
 import CocktailsList from '../CocktailsList';
 import Component from '../Component';
+import Page from '../Page';
+import Router from '../../Router';
 
 // Primary
 // Todo Разобраться как хранить, подгружать, стилизовать и ссылаться на иконки правильно
@@ -10,53 +12,38 @@ import Component from '../Component';
 // Todo Разобраться с событиями в shadow dom "https://javascript.info/shadow-dom-events"
 
 // Webpack
-// Todo Почему TS ругается на пути, хотя объявлены модули в custom.d.ts?
 // Todo Откуда webpack-dev-server раздает файлы? откуда раздает ассеты?
 // Todo Разобраться с путями при загрузке картинок и тп.
-// Todo Разобраться как с телефона подключаться к webpack-dev-server (настройки роутера, windows firewall и т.д.)
 
 export const APP_EVENT_CHANGE_ROUTE = 'APP_EVENT_CHANGE_ROUTE';
 
-class Router {
-    private route: string;
-
-    constructor() {
-        this.route = '';
-    }
-
-    public switchPage(path: string) {
-        this.route = path;
-    }
-
-    public getCurrentRoute() {
-        return this.route;
-    }
+interface IPageContainer {
+    changePage(page: Page): void;
 }
 
-export default class App extends Component {
+export default class App extends Component implements IPageContainer {
     private router: Router;
 
     private cocktailsList: CocktailsList;
-    private pageContainer: HTMLElement;
+    private pageContainer: Page;
 
     constructor(options: any) {
         super(options);
 
+        this.router = new Router();
+
         this.cocktailsList = null;
         this.pageContainer = null;
-
-        this.router = new Router();
     }
 
     connectedCallback() {
         this.pageContainer = this.shadowRoot.querySelector('.page-container');
 
-        this.switchPage('/favourites');
-
         this.shadowRoot.addEventListener(APP_EVENT_CHANGE_ROUTE, (e: CustomEvent) => {
-            console.log(`event: ${APP_EVENT_CHANGE_ROUTE}, details:`, e.detail);
             this.switchPage(e.detail.route);
         });
+
+        this.switchPage('/favourites');
     }
 
     protected getTemplate() {
@@ -83,26 +70,16 @@ export default class App extends Component {
         `;
     }
 
-    // Todo Подумать как сделать это лучше
     private switchPage(path: string) {
-        console.log('route before:', this.router.getCurrentRoute());
-        this.router.switchPage(path);
-        console.log('route after:', this.router.getCurrentRoute());
+        // Delegate switching work to router
+        this.router.switchPage(this, path);
+    }
 
-        const currentRoute = this.router.getCurrentRoute();
-
-        let newPage;
-        switch (currentRoute) {
-            case '/favourites':
-                newPage = document.createElement('x-favourites-cocktails-list');
-                break;
-            case '/home':
-                newPage = document.createElement('x-cocktail-page');
-                break;
+    public changePage(page: Page) {
+        if (this.pageContainer.firstChild) {
+            this.pageContainer.removeChild(this.pageContainer.firstElementChild);
         }
-
-        this.pageContainer.innerHTML = '';
-        this.pageContainer.append(newPage);
+        this.pageContainer.append(page);
     }
 }
 

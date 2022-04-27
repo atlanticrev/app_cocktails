@@ -85,7 +85,19 @@ export default class FavouritesCocktailsList extends Page {
     }
 
     protected getStyles() {
-        return super.getStyles();
+        return super.getStyles().concat(`
+            :host > x-bottom-menu {
+                flex: 1 0 auto;
+            }
+            
+            :host > x-search-input {
+                flex: 1 0 auto;
+            }            
+            
+            :host > x-cocktails-list {
+                flex: 0 1 100%;
+            }
+        `);
     }
 }
 
