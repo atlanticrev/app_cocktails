@@ -15,6 +15,7 @@
     box-sizing: border-box;
 }
 
+/* This prevents bouncing on Safari mobile and push-yu-update on Chrome mobile */
 html, body {
     overscroll-behavior-y: none;
 }

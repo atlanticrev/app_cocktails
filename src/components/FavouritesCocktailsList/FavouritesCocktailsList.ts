@@ -1,6 +1,7 @@
 import Page from '../Page';
 
 import cocktailExampleImg from '../../assets/images/cocktail-mock.jpg';
+import { APP_EVENT_CHANGE_ROUTE } from '../App/App';
 
 const LIST_MOCK_ITEM_COUNT = 24;
 

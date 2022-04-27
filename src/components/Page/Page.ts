@@ -25,4 +25,4 @@ export default class Page extends Component {
     }
 }
 
-customElements.define('x-cocktail-page', Page);
+customElements.define('x-page', Page);

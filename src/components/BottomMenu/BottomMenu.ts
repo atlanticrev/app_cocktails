@@ -6,14 +6,27 @@ import createIcon from '../../assets/icons/circle-plus.svg';
 import favouritesIcon from '../../assets/icons/star.svg';
 import profileIcon from '../../assets/icons/user-solid.svg';
 
+import { APP_EVENT_CHANGE_ROUTE } from '../App/App';
+
 export default class BottomMenu extends Component {
     constructor(options: any) {
         super(options);
+
+        this.onHomeBtnClick = this.onHomeBtnClick.bind(this);
+        this.onFavouritesBtnClick = this.onFavouritesBtnClick.bind(this);
+    }
+
+    connectedCallback() {
+        const homeBtn = this.shadowRoot.querySelector('[data-name="home-btn"]');
+        homeBtn.addEventListener('click', this.onHomeBtnClick);
+
+        const favouritesBtn = this.shadowRoot.querySelector('[data-name="favourites-btn"]');
+        favouritesBtn.addEventListener('click', this.onFavouritesBtnClick);
     }
 
     protected getTemplate() {
         return `
-            <button>
+            <button data-name="home-btn">
                 <img src="${homeIcon}" alt="Home">
                 <span>Home</span>
             </button>
@@ -25,7 +38,7 @@ export default class BottomMenu extends Component {
                 <img src="${createIcon}" alt="Create">
                 <span>Create</span>
             </button>
-            <button>
+            <button data-name="favourites-btn">
                 <img src="${favouritesIcon}" alt="Favourites">
                 <span>Favourites</span>
             </button>
@@ -79,6 +92,26 @@ export default class BottomMenu extends Component {
                 margin-bottom: 4px;
             }
         `;
+    }
+
+    private onHomeBtnClick(e: MouseEvent) {
+        e.stopPropagation();
+
+        this.dispatchEvent(new CustomEvent(APP_EVENT_CHANGE_ROUTE, {
+            bubbles: true,
+            composed: true,
+            detail: { route: '/home' }
+        }));
+    }
+
+    private onFavouritesBtnClick(e: MouseEvent) {
+        e.stopPropagation();
+
+        this.dispatchEvent(new CustomEvent(APP_EVENT_CHANGE_ROUTE, {
+            bubbles: true,
+            composed: true,
+            detail: { route: '/favourites' }
+        }));
     }
 }
 

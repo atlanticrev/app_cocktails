@@ -5,9 +5,17 @@ export default class CocktailPage extends Page {
         super(options);
     }
 
+    protected getTemplate() {
+        return `
+            <x-bottom-menu></x-bottom-menu>
+        `;
+    }
+
     protected getStyles() {
         return super.getStyles().concat(`
-            background-color: red;
+            :host {
+                background-color: red;
+            }
         `);
     }
 }

@@ -34,10 +34,6 @@ export default class CocktailsList extends Component {
             }
         `;
     }
-
-    // public addElementToList(el: HTMLElement) {
-    //     this.shadowRoot.append(el);
-    // }
 }
 
 customElements.define('x-cocktails-list', CocktailsList);
