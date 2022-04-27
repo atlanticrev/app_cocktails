@@ -11,7 +11,7 @@ export default class CocktailsListItem extends Component {
 
         return `
             <img src="${imgSrc}" alt="Cocktail image"/>
-            <h4>${description}</h4>
+            <span>${description}</span>
         `;
     }
 
@@ -35,12 +35,13 @@ export default class CocktailsListItem extends Component {
                 width: 100%;
                 height: 100%;
                 border-radius: inherit;
+                filter: opacity(0.5);
                 z-index: 0;
             }
         
-            h4 {
+            span {
                 color: white;
-                font-size: 1rem;
+                font-size: 1.2rem;
                 text-shadow: var(--main-text-shadow);
                 text-align: left;
                 z-index: 1;
