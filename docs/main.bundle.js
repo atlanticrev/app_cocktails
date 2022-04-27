@@ -100,13 +100,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/assets/images/cocktail-mock.jpg":
-/*!*********************************************!*\
-  !*** ./src/assets/images/cocktail-mock.jpg ***!
-  \*********************************************/
+/***/ "./src/assets/images/cocktail-example1.jpg":
+/*!*************************************************!*\
+  !*** ./src/assets/images/cocktail-example1.jpg ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e17dbcf18e4a157caa1b41def42e6702.jpg\");\n\n//# sourceURL=webpack://cocktails_app/./src/assets/images/cocktail-mock.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e17dbcf18e4a157caa1b41def42e6702.jpg\");\n\n//# sourceURL=webpack://cocktails_app/./src/assets/images/cocktail-example1.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/mochito.jpg":
+/*!***************************************!*\
+  !*** ./src/assets/images/mochito.jpg ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fca28d76e2abf021a08b71eaf4393b4c.jpg\");\n\n//# sourceURL=webpack://cocktails_app/./src/assets/images/mochito.jpg?");
 
 /***/ }),
 
@@ -306,7 +316,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ FavouritesCocktailsList)\n/* harmony export */ });\n/* harmony import */ var _Page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Page */ \"./src/components/Page/index.ts\");\n/* harmony import */ var _assets_images_cocktail_mock_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/cocktail-mock.jpg */ \"./src/assets/images/cocktail-mock.jpg\");\n\n\nconst LIST_MOCK_ITEM_COUNT = 24;\nclass FavouritesCocktailsList extends _Page__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n    static getListItems() {\n        const items = [];\n        for (let i = 0; i < LIST_MOCK_ITEM_COUNT; i++) {\n            items.push(`\r\n                <x-cocktails-list-item\r\n                    img-src=\"${_assets_images_cocktail_mock_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]}\"\r\n                    description=\"Cocktail mock description\"\r\n                ></x-cocktails-list-item>\r\n            `);\n        }\n        return items.join('');\n    }\n    constructor(options) {\n        super(options);\n    }\n    getTemplate() {\n        return `\r\n            <x-search-input></x-search-input>\r\n            <x-cocktails-list>\r\n                ${FavouritesCocktailsList.getListItems()}\r\n            </x-cocktails-list>\r\n            <x-bottom-menu></x-bottom-menu>\r\n        `;\n    }\n    getStyles() {\n        return super.getStyles();\n    }\n}\ncustomElements.define('x-favourites-cocktails-list', FavouritesCocktailsList);\n\n\n//# sourceURL=webpack://cocktails_app/./src/components/FavouritesCocktailsList/FavouritesCocktailsList.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ FavouritesCocktailsList)\n/* harmony export */ });\n/* harmony import */ var _Page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Page */ \"./src/components/Page/index.ts\");\n/* harmony import */ var _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/cocktail-example1.jpg */ \"./src/assets/images/cocktail-example1.jpg\");\n/* harmony import */ var _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/mochito.jpg */ \"./src/assets/images/mochito.jpg\");\n\n\n\nconst MOCK_COCKTAILS_DATA = [\n    {\n        img: _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n        description: 'Оранджевый фреш',\n    },\n    {\n        img: _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        description: 'Мохито',\n    },\n    {\n        img: _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        description: 'Мохито',\n    },\n    {\n        img: _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n        description: 'Оранджевый фреш',\n    },\n    {\n        img: _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n        description: 'Оранджевый фреш',\n    },\n    {\n        img: _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        description: 'Мохито',\n    },\n    {\n        img: _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        description: 'Мохито',\n    },\n    {\n        img: _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n        description: 'Оранджевый фреш',\n    },\n    {\n        img: _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n        description: 'Оранджевый фреш',\n    },\n    {\n        img: _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        description: 'Мохито',\n    },\n    {\n        img: _assets_images_mochito_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        description: 'Мохито',\n    },\n    {\n        img: _assets_images_cocktail_example1_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n        description: 'Оранджевый фреш',\n    }\n];\nclass FavouritesCocktailsList extends _Page__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n    static getListItems() {\n        const items = [];\n        for (let cocktailData of MOCK_COCKTAILS_DATA) {\n            items.push(`\r\n                <x-cocktails-list-item\r\n                    img-src=\"${cocktailData.img}\"\r\n                    description=\"${cocktailData.description}\"\r\n                ></x-cocktails-list-item>\r\n            `);\n        }\n        return items.join('');\n    }\n    constructor(options) {\n        super(options);\n    }\n    getTemplate() {\n        return `\r\n            <x-search-input></x-search-input>\r\n            <x-cocktails-list>\r\n                ${FavouritesCocktailsList.getListItems()}\r\n            </x-cocktails-list>\r\n            <x-bottom-menu></x-bottom-menu>\r\n        `;\n    }\n    getStyles() {\n        return super.getStyles();\n    }\n}\ncustomElements.define('x-favourites-cocktails-list', FavouritesCocktailsList);\n\n\n//# sourceURL=webpack://cocktails_app/./src/components/FavouritesCocktailsList/FavouritesCocktailsList.ts?");
 
 /***/ }),
 
@@ -455,7 +465,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f4839fa96bfb79a02d3d")
+/******/ 		__webpack_require__.h = () => ("49734874996725a217a9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

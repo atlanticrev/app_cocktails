@@ -1,19 +1,68 @@
 import Page from '../Page';
 
-import cocktailExampleImg from '../../assets/images/cocktail-mock.jpg';
-import { APP_EVENT_CHANGE_ROUTE } from '../App/App';
+import cocktailExample1Img from '../../assets/images/cocktail-example1.jpg';
+import cocktailMochitoImg from '../../assets/images/mochito.jpg';
 
-const LIST_MOCK_ITEM_COUNT = 24;
+const MOCK_COCKTAILS_DATA = [
+    {
+        img: cocktailExample1Img,
+        description: 'Оранджевый фреш',
+    },
+    {
+        img: cocktailMochitoImg,
+        description: 'Мохито',
+    },
+    {
+        img: cocktailMochitoImg,
+        description: 'Мохито',
+    },
+    {
+        img: cocktailExample1Img,
+        description: 'Оранджевый фреш',
+    },
+    {
+        img: cocktailExample1Img,
+        description: 'Оранджевый фреш',
+    },
+    {
+        img: cocktailMochitoImg,
+        description: 'Мохито',
+    },
+    {
+        img: cocktailMochitoImg,
+        description: 'Мохито',
+    },
+    {
+        img: cocktailExample1Img,
+        description: 'Оранджевый фреш',
+    },
+    {
+        img: cocktailExample1Img,
+        description: 'Оранджевый фреш',
+    },
+    {
+        img: cocktailMochitoImg,
+        description: 'Мохито',
+    },
+    {
+        img: cocktailMochitoImg,
+        description: 'Мохито',
+    },
+    {
+        img: cocktailExample1Img,
+        description: 'Оранджевый фреш',
+    }
+];
 
 export default class FavouritesCocktailsList extends Page {
     private static getListItems() {
         const items = [];
 
-        for (let i = 0; i < LIST_MOCK_ITEM_COUNT; i++) {
+        for (let cocktailData of MOCK_COCKTAILS_DATA) {
             items.push(`
                 <x-cocktails-list-item
-                    img-src="${cocktailExampleImg}"
-                    description="Cocktail mock description"
+                    img-src="${cocktailData.img}"
+                    description="${cocktailData.description}"
                 ></x-cocktails-list-item>
             `);
         }
