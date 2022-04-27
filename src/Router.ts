@@ -9,6 +9,10 @@ export default class Router {
     }
 
     public switchPage(app: App, path: string) {
+        if (this.route === path) {
+            return;
+        }
+
         this.route = path;
 
         let newPage: Page;

@@ -196,7 +196,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Router)\n/* harmony export */ });\nclass Router {\n    constructor() {\n        this.route = '';\n    }\n    switchPage(app, path) {\n        this.route = path;\n        let newPage;\n        switch (this.route) {\n            case '/favourites':\n                newPage = document.createElement('x-favourites-cocktails-list');\n                break;\n            case '/home':\n                newPage = document.createElement('x-cocktail-page');\n                break;\n        }\n        app.changePage(newPage);\n    }\n    getCurrentRoute() {\n        return this.route;\n    }\n}\n\n\n//# sourceURL=webpack://cocktails_app/./src/Router.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Router)\n/* harmony export */ });\nclass Router {\n    constructor() {\n        this.route = '';\n    }\n    switchPage(app, path) {\n        if (this.route === path) {\n            return;\n        }\n        this.route = path;\n        let newPage;\n        switch (this.route) {\n            case '/favourites':\n                newPage = document.createElement('x-favourites-cocktails-list');\n                break;\n            case '/home':\n                newPage = document.createElement('x-cocktail-page');\n                break;\n        }\n        app.changePage(newPage);\n    }\n    getCurrentRoute() {\n        return this.route;\n    }\n}\n\n\n//# sourceURL=webpack://cocktails_app/./src/Router.ts?");
 
 /***/ }),
 
@@ -475,7 +475,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("7cfe9b0e480c6ff97629")
+/******/ 		__webpack_require__.h = () => ("9f771fbca9b22aa3c325")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
