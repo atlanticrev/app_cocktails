@@ -2,9 +2,32 @@ import Component from '../Component';
 
 import crossIcon from '../../assets/icons/cross.svg';
 
+const SEARCH_INPUT_EVENT_RESET = 'SEARCH_INPUT_EVENT_RESET';
+
 export default class SearchInput extends Component {
+    private resetBtn: HTMLButtonElement;
+    private input: HTMLInputElement;
+
     constructor(options: any) {
         super(options);
+
+        this.resetBtn = null;
+        this.input = null;
+
+        this.onResetBtnClick = this.onResetBtnClick.bind(this);
+    }
+
+    connectedCallback() {
+        this.resetBtn = this.shadowRoot.querySelector('button');
+        this.input = this.shadowRoot.querySelector('input');
+
+        this.resetBtn.addEventListener('click', this.onResetBtnClick);
+    }
+
+    private onResetBtnClick() {
+        this.input.value = '';
+
+        this.dispatchEvent(new CustomEvent(SEARCH_INPUT_EVENT_RESET, { bubbles: true, composed: true }));
     }
 
     protected getTemplate() {

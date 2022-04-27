@@ -35,7 +35,7 @@ export default class CocktailsListItem extends Component {
                 width: 100%;
                 height: 100%;
                 border-radius: inherit;
-                filter: opacity(0.5);
+                filter: opacity(0.75);
                 z-index: 0;
             }
         
