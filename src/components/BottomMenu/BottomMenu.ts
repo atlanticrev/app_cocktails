@@ -13,23 +13,23 @@ export default class BottomMenu extends Component {
 
     protected getTemplate() {
         return `
-            <button class="bottom-menu-item">
+            <button>
                 <img src="${homeIcon}" alt="Home">
                 <span>Home</span>
             </button>
-            <button class="bottom-menu-item">
+            <button>
                 <img src="${searchIcon}" alt="Search">
                 <span>Search</span>
             </button>
-            <button class="bottom-menu-item">
+            <button>
                 <img src="${createIcon}" alt="Create">
                 <span>Create</span>
             </button>
-            <button class="bottom-menu-item">
+            <button>
                 <img src="${favouritesIcon}" alt="Favourites">
                 <span>Favourites</span>
             </button>
-            <button class="bottom-menu-item">
+            <button>
                 <img src="${profileIcon}" alt="Profile">
                 <span>Profile</span>
             </button>
@@ -66,6 +66,8 @@ export default class BottomMenu extends Component {
                 font-size: 0.75rem;
                 text-shadow: var(--main-text-shadow);
                 text-align: center;
+                width: 0;
+                flex: 1 1 0px;
                 padding: 5px 10px;
                 border: 0;
             }
