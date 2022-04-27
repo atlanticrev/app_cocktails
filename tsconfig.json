@@ -6,6 +6,7 @@
     "target": "es6",
     "moduleResolution": "node"
   },
+  // Пока не добавил "./src", ts ругался на модули *.jpg
   "include": [
     "./src",
     "./custom.d.ts"

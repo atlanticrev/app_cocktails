@@ -1,56 +1,56 @@
 import Page from '../Page';
 
 import cocktailExample1Img from '../../assets/images/cocktail-example1.jpg';
-import cocktailMochitoImg from '../../assets/images/mochito.jpg';
+import cocktailMojitoImg from '../../assets/images/mojito.jpg';
 
 const MOCK_COCKTAILS_DATA = [
     {
         img: cocktailExample1Img,
-        description: 'Оранджевый фреш',
+        description: 'Orange fresh',
     },
     {
-        img: cocktailMochitoImg,
-        description: 'Мохито',
+        img: cocktailMojitoImg,
+        description: 'Mojito',
     },
     {
-        img: cocktailMochitoImg,
-        description: 'Мохито',
-    },
-    {
-        img: cocktailExample1Img,
-        description: 'Оранджевый фреш',
+        img: cocktailMojitoImg,
+        description: 'Mojito',
     },
     {
         img: cocktailExample1Img,
-        description: 'Оранджевый фреш',
-    },
-    {
-        img: cocktailMochitoImg,
-        description: 'Мохито',
-    },
-    {
-        img: cocktailMochitoImg,
-        description: 'Мохито',
+        description: 'Orange fresh',
     },
     {
         img: cocktailExample1Img,
-        description: 'Оранджевый фреш',
+        description: 'Orange fresh',
+    },
+    {
+        img: cocktailMojitoImg,
+        description: 'Mojito',
+    },
+    {
+        img: cocktailMojitoImg,
+        description: 'Mojito',
     },
     {
         img: cocktailExample1Img,
-        description: 'Оранджевый фреш',
-    },
-    {
-        img: cocktailMochitoImg,
-        description: 'Мохито',
-    },
-    {
-        img: cocktailMochitoImg,
-        description: 'Мохито',
+        description: 'Orange fresh',
     },
     {
         img: cocktailExample1Img,
-        description: 'Оранджевый фреш',
+        description: 'Orange fresh',
+    },
+    {
+        img: cocktailMojitoImg,
+        description: 'Mojito',
+    },
+    {
+        img: cocktailMojitoImg,
+        description: 'Mojito',
+    },
+    {
+        img: cocktailExample1Img,
+        description: 'Orange fresh',
     }
 ];
 

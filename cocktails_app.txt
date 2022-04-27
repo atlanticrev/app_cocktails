@@ -1,8 +1,4 @@
-1. Create / use build script
-2. Use web-components
-3. Mobile first
-
-4. Components:
+Components:
   a. Login page
   b. Profile page
   c. Settings / preferences page
