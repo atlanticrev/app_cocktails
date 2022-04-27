@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overscroll-behavior-y: none;
+}
+
 html {
     font-size: 16px;
     font-family: Ubuntu, "Droid Sans", sans-serif;

@@ -1,5 +1,6 @@
 import CocktailsList from '../CocktailsList';
 import Component from '../Component';
+
 import FavouritesCocktailsList from '../FavouritesCocktailsList';
 
 // Primary
@@ -23,8 +24,12 @@ export default class App extends Component {
         super(options);
 
         this.cocktailsList = null;
+    }
 
-        this.shadowRoot.append(new FavouritesCocktailsList({}));
+    protected getTemplate() {
+        return `
+            <x-favourites-cocktails-list></x-favourites-cocktails-list>
+        `;
     }
 
     protected getStyles() {

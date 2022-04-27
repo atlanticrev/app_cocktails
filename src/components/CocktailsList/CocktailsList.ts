@@ -5,6 +5,12 @@ export default class CocktailsList extends Component {
         super(options);
     }
 
+    protected getTemplate() {
+        return `
+            <slot></slot>
+        `;
+    }
+
     protected getStyles() {
         return `
             :host {
@@ -29,9 +35,9 @@ export default class CocktailsList extends Component {
         `;
     }
 
-    public addElementToList(el: HTMLElement) {
-        this.shadowRoot.append(el);
-    }
+    // public addElementToList(el: HTMLElement) {
+    //     this.shadowRoot.append(el);
+    // }
 }
 
 customElements.define('x-cocktails-list', CocktailsList);

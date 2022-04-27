@@ -6,7 +6,8 @@ export default class CocktailsListItem extends Component {
     }
 
     protected getTemplate() {
-        const { imgSrc, description } = this.options;
+        const imgSrc = this.getAttribute('img-src');
+        const description  = this.getAttribute('description');
 
         return `
             <img src="${imgSrc}" alt="Cocktail image"/>

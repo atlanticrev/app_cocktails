@@ -1,7 +1,3 @@
-import SearchInput from '../SearchInput';
-import CocktailsList from '../CocktailsList';
-import CocktailsListItem from '../CocktailsListItem';
-import BottomMenu from '../BottomMenu';
 import Page from '../Page';
 
 import cocktailExampleImg from '../../assets/images/cocktail-mock.jpg';
@@ -9,23 +5,33 @@ import cocktailExampleImg from '../../assets/images/cocktail-mock.jpg';
 const LIST_MOCK_ITEM_COUNT = 24;
 
 export default class FavouritesCocktailsList extends Page {
-    private readonly cocktailsList: CocktailsList;
+    private static getListItems() {
+        const items = [];
+
+        for (let i = 0; i < LIST_MOCK_ITEM_COUNT; i++) {
+            items.push(`
+                <x-cocktails-list-item
+                    img-src="${cocktailExampleImg}"
+                    description="Cocktail mock description"
+                ></x-cocktails-list-item>
+            `);
+        }
+
+        return items.join('');
+    }
 
     constructor(options: any) {
         super(options);
+    }
 
-        this.shadowRoot.append(new SearchInput({}));
-
-        this.cocktailsList = new CocktailsList({});
-        for (let i = 0; i < LIST_MOCK_ITEM_COUNT; i++) {
-            this.cocktailsList.addElementToList(new CocktailsListItem({
-                imgSrc: cocktailExampleImg,
-                description: 'Cocktail mock description'
-            }));
-        }
-        this.shadowRoot.append(this.cocktailsList);
-
-        this.shadowRoot.append(new BottomMenu({}));
+    protected getTemplate() {
+        return `
+            <x-search-input></x-search-input>
+            <x-cocktails-list>
+                ${FavouritesCocktailsList.getListItems()}
+            </x-cocktails-list>
+            <x-bottom-menu></x-bottom-menu>
+        `;
     }
 
     protected getStyles() {

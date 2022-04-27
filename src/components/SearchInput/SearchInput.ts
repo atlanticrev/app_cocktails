@@ -11,7 +11,9 @@ export default class SearchInput extends Component {
         return `
             <div class="search-container">
                 <input type="text" placeholder="Search some cocktail..." />
-                <button><img src="${crossIcon}" alt="Reset"></button>
+                <button>
+                    <img src="${crossIcon}" alt="Reset">
+                </button>
             </div>
         `;
     }
