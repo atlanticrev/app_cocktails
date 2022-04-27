@@ -10,8 +10,5 @@
   },
   "include": [
     "./custom.d.ts"
-  ],
-  "files": [
-    "./custom.d.ts"
   ]
 }
