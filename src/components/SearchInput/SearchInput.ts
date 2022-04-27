@@ -33,9 +33,9 @@ export default class SearchInput extends Component {
                 flex-flow: row nowrap;
                 justify-content: flex-end;
                 align-items: center;
-                padding: 0 10px;
+                flex: 1 0 auto;
+                padding: 14px 10px;
                 width: 100%;
-                height: 80px;
                 background-color: var(--main-bg-color);
             }
             

@@ -18,8 +18,8 @@ export default class CocktailsList extends Component {
                 grid-template-columns: 1fr 1fr;
                 grid-auto-rows: 220px;
                 gap: 10px;
+                flex: 0 1 100%;
                 width: 100%;
-                height: 100%;
                 overflow: auto;
                 z-index: 0;
                 padding: 5px 10px;
