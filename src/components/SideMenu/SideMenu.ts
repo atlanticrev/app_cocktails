@@ -7,19 +7,48 @@ import favouritesIcon from '../../assets/icons/star.svg';
 import profileIcon from '../../assets/icons/user-solid.svg';
 import { APP_EVENT_CHANGE_ROUTE } from '../App/App';
 
-const enqueueAnimation = (fn: () => void) => {
-    requestAnimationFrame(
-        () => requestAnimationFrame(
-            () => {
-                fn();
-            }
-        )
-    );
-};
+class TransitionAnimator {
+    public animate(options: any) {
+        const { target, type, startValue, endValue, easing, time } = options;
+
+        target.style.setProperty('transition', `${type} ${time} ${easing}`);
+        target.style.setProperty(`${type}`, `${startValue}`);
+
+        return new Promise<void>((resolve) => {
+            const onTransitionEnd = () => {
+                target.removeEventListener('transitionend', onTransitionEnd);
+                target.style.removeProperty('transition');
+                resolve();
+            };
+
+            target.addEventListener('transitionend', onTransitionEnd);
+
+            const onAnimate = () => {
+                target.style.setProperty(`${type}`, `${endValue}`);
+            };
+
+            this.enqueueAnimation(onAnimate);
+        });
+    }
+
+    private enqueueAnimation = (fn: () => void) => {
+        requestAnimationFrame(
+            () => requestAnimationFrame(
+                () => {
+                    fn();
+                }
+            )
+        );
+    };
+}
 
 export default class SideMenu extends Component {
+    private transitionAnimator: TransitionAnimator;
+
     constructor(options: any) {
         super(options);
+
+        this.transitionAnimator = new TransitionAnimator();
 
         this.classList.add('hide');
 
@@ -34,7 +63,7 @@ export default class SideMenu extends Component {
         const favouritesBtn = this.shadowRoot.querySelector('[data-name="favourites-btn"]');
         favouritesBtn.addEventListener('click', this.onFavouritesBtnClick);
 
-        enqueueAnimation(this.show);
+        this.animateTest().then(() => console.warn('Animation ended'));
     }
 
     protected getTemplate(): string {
@@ -136,6 +165,18 @@ export default class SideMenu extends Component {
 
     private hide() {
         this.classList.add('hide');
+    }
+
+    // Todo убрать в место по лучше
+    private async animateTest() {
+        await this.transitionAnimator.animate({
+            target: this,
+            type: 'transform',
+            startValue: 'translate(-100%, 0)',
+            endValue: 'translate(0, 0)',
+            easing: 'ease-out',
+            time: '0.25s'
+        });
     }
 }
 
